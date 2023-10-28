@@ -5,16 +5,42 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { useState } from 'react';
 import axios from 'axios';
 export default function Login({ navigation }) {
-  const baseUrl = 'https://medpro.onrender.com/api/v1/auth/getAllUser';
+  const baseUrl = 'https://medpro.onrender.com/api/v1/auth';
   const [email,setEmail]=useState("");
   const [password,setPassword]=useState("");
   const onChangeUserHandler = (email) => {
     setEmail(email);
   };
   const onChangePasswordHandler = (password) => {
-    setEmail(password);
+    setPassword(password);
   };
-  
+  const onSubmitFormHandler = async (event) => {
+    if (!email.trim() || !password.trim()) {
+      alert("Name or Email is invalid");
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      const response = await axios.post(`${baseUrl}/login`, {
+        email,
+        password,
+      });
+
+      if (response.status === 201) {
+        alert(` You have created: ${JSON.stringify(response.data)}`);
+        setIsLoading(false);
+        setFullName("");
+        setEmail("");
+      } else {
+        throw new Error("An error has occurred");
+      }
+    } catch (error) {
+      alert("An error has occurred");
+      setIsLoading(false);
+    }
+  };
   console.log(email,password);
   return (
     <View style={styles.containerLogin}>
