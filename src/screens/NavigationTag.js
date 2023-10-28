@@ -28,7 +28,7 @@ export default function NavigationTag() {
         else if (route.name === "Account") {
           iconName = focused ? 'search' : 'search-outline';
         }
-        return <Ionic name={iconName} size={size} color={color} />;
+        return <Ionic name={iconName} size={size} color={color} />; 
       },
     })}
     >
