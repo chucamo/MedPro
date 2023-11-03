@@ -8,8 +8,11 @@ import Header from './src/componnets/Header';
 import Loading_Home from './src/screens/Loading_Home';
 import Logged from './src/screens/Logged';
 import Login from './src/componnets/Login';
-import Question from './src/screens/Questions';
-import Seacrch from './src/screens/Search';
+import Insurance_Policy from './src/screens/Insurance_Policy';
+import Questions from './src/screens/Questions';
+import Account from './src/screens/Account';
+import Share from './src/screens/Search';
+import Dieukhoan from './src/screens/Dieukhoan';
 import Select_facility from './src/screens/Select_Facility';
 import Usage_Rules from './src/screens/Usage_Rules';
 import NavigationTag from './src/screens/NavigationTag';
@@ -35,6 +38,12 @@ export default function App() {
         <Stack.Screen name="Login" component={Login} options={{headerShown:false}} />
         <Stack.Screen name="Auth" component={Auth} />
         <Stack.Screen name="NavigationTag" component={NavigationTag} options={{ headerShown: false }} />
+        <Stack.Screen name="Header" component={Header}  options={{ headerShown: false }} />
+        <Stack.Screen name="Account" component={Account}  options={{ headerShown: false }} />
+        <Stack.Screen name="Usage_Rules" component={Usage_Rules} options={{ headerShown: false }} />
+        <Stack.Screen name="Insurance_Policy" component={Insurance_Policy} options={{ headerShown: false }} />
+        <Stack.Screen name="Dieukhoan" component={Dieukhoan} options={{ headerShown: false }} />
+        <Stack.Screen name="Questions" component={Questions} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

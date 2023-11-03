@@ -23,10 +23,10 @@ export default function NavigationTag() {
         } else if (route.name === "Examination_Form") {
           iconName = focused ? 'heart' : 'heart-outline';
         } else if (route.name === "Notification") {
-          iconName = focused ? 'search' : 'search-outline';
+          iconName = focused ? 'notifications' : 'notifications-circle';
         }
         else if (route.name === "Account") {
-          iconName = focused ? 'search' : 'search-outline';
+          iconName = focused ? 'people' : 'people-circle';
         }
         return <Ionic name={iconName} size={size} color={color} />; 
       },
@@ -36,7 +36,7 @@ export default function NavigationTag() {
       <Tab.Screen name="File" component={File}  />
       <Tab.Screen name="Examination_Form" component={Examination_Form}  />
       <Tab.Screen name="Notification" component={Notification} />
-      <Tab.Screen name="Account" component={Account}  />
+      <Tab.Screen name="Account" component={Account} options={{headerShown: false}}  />
     </Tab.Navigator>
   )
 }

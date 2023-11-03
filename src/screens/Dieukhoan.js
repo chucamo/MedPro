@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-export default function Insurance_Policy() {
+export default function Dieukhoan() {
   return (
     <View>
-      <Text>Insurance_Policy</Text>
+      <Text>Dieukhoan</Text>
     </View>
   )
 }

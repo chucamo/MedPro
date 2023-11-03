@@ -12,7 +12,7 @@ export default function Login({ navigation }) {
     setEmail(email);
   };
   const onChangePasswordHandler = (password) => {
-    setEmail(password);
+    setPassword(password);
   };
   
   console.log(email,password);
