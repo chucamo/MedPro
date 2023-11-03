@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 import { StyleSheet, Text, View,Button, Image ,TouchableOpacity,StatusBar, ScrollView,ImageBackground } from 'react-native'
 import React from 'react'
 import Login from '../componnets/Login'
@@ -107,6 +108,24 @@ export default function Account({navigation}) {
     </ScrollView>
     </ImageBackground>
     
+=======
+import { StyleSheet, Text, View, Button, Image } from 'react-native'
+import React from 'react'
+
+export default function Account({ navigation }) {
+  return (
+    <View>
+      <Image
+        style={styles.tinyLogo}
+      />
+      <Button
+        onPress={() => navigation.navigate('Login')}
+        title="Đăng xuất"
+
+      />
+
+    </View>
+>>>>>>> 9122ca2974aa7de0e5f68735625eedde91fd1cd1
   )
 }
 
