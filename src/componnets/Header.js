@@ -5,7 +5,7 @@ export default class Header extends Component {
   render() {
     return (
       <View>
-        <Text>Header</Text>
+        <Text>42343423</Text>
       </View>
     )
   }

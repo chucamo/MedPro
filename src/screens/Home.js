@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
-
+import Header from '../componnets/Header';
 export default function Home() {
   const baseUrl = 'https://medpro.onrender.com/api/v1/auth/getAllUser';
   const [users, setUsers] = useState([]);
@@ -24,6 +24,7 @@ export default function Home() {
 
   return (
     <View>
+      <Header/>
       {users && users.map((user, index) => (
         <View key={index}>
           <Text>

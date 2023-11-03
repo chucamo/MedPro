@@ -13,6 +13,7 @@ import Seacrch from './src/screens/Search';
 import Select_facility from './src/screens/Select_Facility';
 import Usage_Rules from './src/screens/Usage_Rules';
 import NavigationTag from './src/screens/NavigationTag';
+import FogotPassword from './src/componnets/FogotPassword';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useState } from 'react';
@@ -33,8 +34,10 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Login" component={Login} options={{headerShown:false}} />
-        <Stack.Screen name="Auth" component={Auth} />
+        <Stack.Screen name="Auth" component={Auth} options={{headerShown:false}}/>
         <Stack.Screen name="NavigationTag" component={NavigationTag} options={{ headerShown: false }} />
+        <Stack.Screen name="Usage_Rules" component={Usage_Rules} options={{ headerShown: false }} />
+        <Stack.Screen name="FogotPassword" component={FogotPassword} options={{headerShown:false}}  />
       </Stack.Navigator>
     </NavigationContainer>
   );
