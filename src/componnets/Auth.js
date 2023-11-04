@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, ImageBackground, TextInput, TouchableOpacity, Alert } from 'react-native'
+import { StyleSheet, Text, View, ImageBackground, TextInput, TouchableOpacity, Alert, SafeAreaView } from 'react-native'
 import React from 'react'
 import { ScrollView } from 'react-native';
 import Ionic from 'react-native-vector-icons/Ionicons'
@@ -97,7 +97,6 @@ export default function Auth({ navigation }) {
   const renderItem = item => {
     return (
       <View style={styles.item}>
-
         <Text style={styles.textItem} >{item.label}</Text>
         {item.value === value && (
           <AntDesign
@@ -111,8 +110,9 @@ export default function Auth({ navigation }) {
     );
   };
   return (
-    <View >
-      <ImageBackground source={require("../Img/background_login.jpg")} style={{ height: '100%', opacity: 0.8 }}>
+    <View>
+    <ImageBackground source={require("../Img/background_login.jpg")} style={{ height: '100%', opacity: 0.8 }}>
+        <SafeAreaView>
         <View style={styles.headerAuth}>
           <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }} onPress={() => navigation.navigate("Login")}>
             <Ionic name={"chevron-back"} style={{ fontSize: 30, color: '#fff' }} />
@@ -297,8 +297,9 @@ export default function Auth({ navigation }) {
         <View >
 
         </View>
+      </SafeAreaView>
       </ImageBackground>
-    </View>
+      </View>
   )
 }
 
