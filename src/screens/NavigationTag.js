@@ -32,7 +32,7 @@ export default function NavigationTag() {
       },
     })}
     >
-      <Tab.Screen name="Home" component={Home}  />
+      <Tab.Screen name="Home" component={Home} options={{headerShown:false}}  />
       <Tab.Screen name="File" component={File}  />
       <Tab.Screen name="Examination_Form" component={Examination_Form}  />
       <Tab.Screen name="Notification" component={Notification} />

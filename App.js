@@ -11,7 +11,7 @@ import Login from './src/componnets/Login';
 import Insurance_Policy from './src/screens/Insurance_Policy';
 import Questions from './src/screens/Questions';
 import Account from './src/screens/Account';
-import Share from './src/screens/Search';
+import Search from './src/screens/Search';
 import Dieukhoan from './src/screens/Dieukhoan';
 import Select_facility from './src/screens/Select_Facility';
 import Usage_Rules from './src/screens/Usage_Rules';
@@ -20,7 +20,7 @@ import FogotPassword from './src/componnets/FogotPassword';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useState } from 'react';
-
+import Home from './src/screens/Home';
 export default function App() {
   const baseUrl = 'https://medpro.onrender.com/api/v1/auth/getAllUser';
   const Tab = createBottomTabNavigator();
@@ -46,6 +46,7 @@ export default function App() {
         <Stack.Screen name="Questions" component={Questions} options={{ headerShown: false }} />
         <Stack.Screen name="Usage_Rules" component={Usage_Rules} options={{ headerShown: false }} />
         <Stack.Screen name="FogotPassword" component={FogotPassword} options={{headerShown:false}}  />
+        <Stack.Screen name="Search" component={Search} options={{headerShown:false}}  />
       </Stack.Navigator>
     </NavigationContainer>
   );
