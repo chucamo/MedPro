@@ -34,13 +34,12 @@ export default function App() {
     console.log(error);
   });
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
+    <NavigationContainer >
+      <Stack.Navigator >
         <Stack.Screen name="Login" component={Login} options={{headerShown:false}} />
         <Stack.Screen name="Auth" component={Auth} options={{headerShown:false}}/>
         <Stack.Screen name="NavigationTag" component={NavigationTag} options={{ headerShown: false }} />
         <Stack.Screen name="Header" component={Header}  options={{ headerShown: false }} />
-        <Stack.Screen name="Account" component={Account}  options={{ headerShown: false }} />
         <Stack.Screen name="Insurance_Policy" component={Insurance_Policy} options={{ headerShown: false }} />
         <Stack.Screen name="Dieukhoan" component={Dieukhoan} options={{ headerShown: false }} />
         <Stack.Screen name="Questions" component={Questions} options={{ headerShown: false }} />

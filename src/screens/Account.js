@@ -1,13 +1,30 @@
 import { StyleSheet, Text, View,Button, Image ,TouchableOpacity,StatusBar, ScrollView,ImageBackground } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import Login from '../componnets/Login'
 import AntDesign from 'react-native-vector-icons/AntDesign'
-export default function Account({navigation}) {
+import PhoneCall from 'react-native-phone-call';
+import { useNavigation } from '@react-navigation/native';
+export default function Account() {
+  const navigation = useNavigation();
+
+  const handleGoBack = () => {
+    navigation.goBack();
+  };
+  const makePhoneCall = () => {
+    const args = {
+      number: '19002115',
+      prompt: true,
+    };
+    PhoneCall(args);
+  };
   return (
     <ImageBackground style={{ flex: 1}} source={require('../Img/background.jpg')}>
       <View style={{flex:0.15, justifyContent: 'center', }}>
       <ImageBackground source={require('../Img/Rectangle_2.png')} style={{width: '100%', height: '100%', justifyContent: 'center', alignItems: 'center'}}>
-        <Image source={require('../icon_anh/arrow-left.png')} style={{position: 'absolute', left: 12,top: 50, width: 20, height:20}}></Image>
+        <TouchableOpacity style={{position: 'absolute', left: 12,top: 50}} onPress={handleGoBack}>
+        <Image source={require('../icon_anh/arrow-left.png') }style={{width: 20, height:20}} ></Image>
+        </TouchableOpacity>
+
         </ImageBackground>
       </View>
       <ScrollView style={{flex:1}}>
@@ -16,9 +33,14 @@ export default function Account({navigation}) {
         <View style={{ justifyContent: 'center', alignItems: 'center'}} >
           <Image source={require('../icon_anh/Ellipse_1.png')} style= {{width: 100, height: 100, marginBottom: 10}}/>
           <Text style={{fontSize: 16, color: '#fff', marginBottom: 15, fontWeight: 600}}>Khách</Text>
+          <View style={styles.login_regester}> 
           <TouchableOpacity onPress={ () => navigation.navigate("Login")}>
-            <Text style={{fontSize: 16, color: '#fff', paddingBottom: 30}}>Đăng nhập/ Đăng kí</Text>
+            <Text style={{fontSize: 16, color: '#fff', paddingBottom: 30}}>Đăng nhập/</Text>
           </TouchableOpacity>
+          <TouchableOpacity onPress={ () => navigation.navigate("Auth")}>
+            <Text style={{fontSize: 16, color: '#fff', paddingBottom: 30}}>Đăng kí</Text>
+          </TouchableOpacity>
+          </View>
         </View>
       </ImageBackground>
       </View>
@@ -49,7 +71,7 @@ export default function Account({navigation}) {
            <AntDesign name="right" style={styles.accout_icon_right}/>
 
       </TouchableOpacity> 
-      <TouchableOpacity style={styles.butston}>
+      <TouchableOpacity style={styles.butston} onPress={makePhoneCall}>
         <View style={styles.accoutt_view}>
           <Image style={styles.account_icon} source={require('../icon_anh/Holine.png')} />
           <Text style={styles.account_text}>Tổng đài CSKH 19002115</Text>
@@ -57,7 +79,7 @@ export default function Account({navigation}) {
            <AntDesign name="right" style={styles.accout_icon_right}/>
 
       </TouchableOpacity> 
-      <TouchableOpacity style={styles.butston}>
+      <TouchableOpacity style={styles.butston} >
         <View style={styles.accoutt_view}>
           <Image style={styles.account_icon} source={require('../icon_anh/shield.png')} />
           <Text style={styles.account_text}>Đánh giá ứng dụng</Text>
@@ -149,5 +171,11 @@ const styles = StyleSheet.create({
       color: '#57ABC9',
       fontWeight: 'bold',
       fontSize: 12
-   }
+   },
+   login_regester: {
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center'
+   },
+  
 });
